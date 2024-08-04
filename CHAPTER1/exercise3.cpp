@@ -53,4 +53,5 @@ int main() {
     cout << "(" << to_string(b2.x) << ", " << to_string(b2.y) << ", " << to_string(b2.z) << "), ";
     cout << "(" << to_string(c2.x) << ", " << to_string(c2.y) << ", " << to_string(c2.z) << ")" << endl;
     cout << isTheTriangleFormedBy3DotsRectangleWithLabel(a2, b2, c2) << endl;
+    return 0;
 }
