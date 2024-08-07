@@ -8,15 +8,16 @@ struct Point {
     double y;
 };
 
-struct Vector {
-    double x;
-    double y;
-    double z;
-};
 
+Point A = {1.0, 2.0};
+Point B = {2.0, 3.0};
+Point C = {3.0, 4.0};
 
-Point A = {1, 2};
-Point B = {2, 3};
-Point C = {3, 4};
+double areaOfTriangleWithThreePoints() {
+    return (1.0 / 2.0) * std::abs((A.x * (B.y - C.y) + B.x * (C.y - B.y) + C.x * (A.y - B.y)));
+}
 
-double areaOfTriangle
+int main () {
+    cout << "The area of the triangle is: " << areaOfTriangleWithThreePoints() << endl;
+    return 0;
+}
