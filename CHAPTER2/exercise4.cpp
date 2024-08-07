@@ -35,7 +35,7 @@ string printsCentroidOfPolygonsWithFiveVertices(PolygonWithFiveVertices &polygon
 
 double calculatesCentroidXOfPolygonsWithFiveVertices(PolygonWithFiveVertices polygon) {
     double firstFactor, summation, x;
-    firstFactor = (1.0 / (6.0 * calculatesAreaOfPolygon());
+    firstFactor = (1.0 / (6.0 * calculatesAreaOfPolygon(a));
 };
 
 double summation(PolygonWithFiveVertices polygon, string axis) {
