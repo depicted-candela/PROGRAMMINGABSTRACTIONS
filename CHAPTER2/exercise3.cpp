@@ -10,10 +10,10 @@ struct Line {
     double c;
 };
 
-bool areTheLinesParallel(Line l1, Line l2);
-string printsTheIntersectionOfTwoRectLines(Line l1, Line l2);
-double findsTheXIntersection(Line l1, Line l2);
-double findsTheYIntersection(Line l1, Line l2, double x);
+bool areTheLinesParallel(Line &line1, Line &line2);
+string printsTheIntersectionOfTwoRectLines(Line &line1, Line &line2);
+double findsTheXIntersection(Line &line1, Line &line2);
+double findsTheYIntersection(Line &line1, Line &line2, double &x);
 
 int main () {
     // Example 2: Intersected lines
@@ -35,28 +35,28 @@ int main () {
     return 0;
 }
 
-bool areTheLinesParallel(Line line1, Line line2) {
+bool areTheLinesParallel(Line &line1, Line &line2) {
     return line1.a == line2.a;
 };
 
-string printsTheIntersectionOfTwoRectLines(Line line1, Line line2) {
+string printsTheIntersectionOfTwoRectLines(Line &line1, Line &line2) {
     double x, y;
     x = findsTheXIntersection(line1, line2);
     y = findsTheYIntersection(line1, line2, x);
     return "The intersection between the lines is: (" + to_string(x) + ", " + to_string(y) +  ")";
 }
 
-double findsTheXIntersection(Line l1, Line l2) {
+double findsTheXIntersection(Line &line1, Line &line2) {
     double factor1, factor2;
-    factor1 = ((l1.c / l1.b) - (l2.c / l1.b));
-    factor2 = ((l1.b * l2.b) * ((l1.a * l2.b) * (l2.a * l1.b)));
+    factor1 = ((line1.c / line1.b) - (line2.c / line1.b));
+    factor2 = ((line1.b * line2.b) * ((line1.a * line2.b) * (line2.a * line1.b)));
     return factor1 * factor2;
 }
 
-double findsTheYIntersection(Line l1, Line l2, double x) {
-    double y_l1, y_l2;
-    y_l1 = (l1.c / l1.b) - l1.a * x;
-    y_l2 = (l2.c / l2.b) - l2.a * x;
-    if (y_l1 == y_l2) return y_l1;
+double findsTheYIntersection(Line &line1, Line &line2, double &x) {
+    double y_line1, y_line2;
+    y_line1 = (line1.c / line1.b) - line1.a * x;
+    y_line2 = (line2.c / line2.b) - line2.a * x;
+    if (y_line1 == y_line2) return y_line1;
     throw std::runtime_error("The lines do not intersect at the given x-coordinate.");
 }
