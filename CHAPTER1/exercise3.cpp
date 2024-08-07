@@ -14,7 +14,7 @@ struct Vector {
     double z;
 };
 
-Vector createsVectorBetweenPoints(Point p1, Point p2) {
+Vector createsVectorsWithPoints(Point p1, Point p2) {
     Vector vector;
     vector.x = p1.x - p2.x;
     vector.y = p1.y - p2.y;
@@ -23,9 +23,9 @@ Vector createsVectorBetweenPoints(Point p1, Point p2) {
 }
 
 bool isTheTriangleRectangle(Point a, Point b, Point c) {
-    Vector ab = createsVectorBetweenPoints(a, b);
-    Vector bc = createsVectorBetweenPoints(b, c);
-    Vector ac = createsVectorBetweenPoints(a, c);
+    Vector ab = createsVectorsWithPoints(a, b);
+    Vector bc = createsVectorsWithPoints(b, c);
+    Vector ac = createsVectorsWithPoints(a, c);
     double abac = ab.x * ac.x + ab.y * ac.y + ab.z * ac.z;
     double abbc = ab.x * bc.x + ab.y * bc.y + ab.y * bc.y;
     double acbc = ac.x * bc.x + ac.y * bc.y + ac.z * bc.z;
