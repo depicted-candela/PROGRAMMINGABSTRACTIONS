@@ -116,7 +116,7 @@ void testMidPoint() {
     a = {0.0, 0.0};
     b = {2.0, 2.0};
     expected = {1.0, 1.0};
-    result = midPoint(a, b);
+    result = midPoint(a, b);n
     if (result.x == expected.x && result.y == expected.y) {
         std::cout << "Test case 1 passed.\n";
     } else {
