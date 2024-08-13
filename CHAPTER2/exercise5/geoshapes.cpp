@@ -43,7 +43,6 @@ void testCalculateDistance() {
 }
 
 void testCalculateArea() {
-    // Simulate input for calculateCircleArea
     cin.clear();
     cout << "Give a 5 get a successful assert" << endl;
     double area = calculateArea(CIRCLE);

@@ -1,5 +1,5 @@
-#ifndef _direction_h
-#define _direction_h
+#ifndef _geoshapes_h
+#define _geoshapes_h
 
 enum ShapeType {
     CIRCLE, LINE, POINT
