@@ -5,6 +5,7 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/stanford-cpp-library",
+                "${workspaceFolder}/stanford-cpp-library/Library",
                 "${workspaceFolder}/stanford-cpp-library/Archived/autograder-empty-project/lib/StanfordCPPLib/io",
                 "${workspaceFolder}/stanford-cpp-library/Archived/autograder-empty-project/lib/StanfordCPPLib"
             ],
