@@ -80,9 +80,7 @@ double calculatesAreaOfPolygonWithFiveVertices(PolygonWithFiveVertices polygon) 
 int main() {
     PolygonWithFiveVertices polygon1 = {{0, 0}, {4, 0}, {4, 3}, {2, 5}, {0, 3}};
     printsCentroidOfPolygonsWithFiveVertices(polygon1);
-
     PolygonWithFiveVertices polygon2 = {{1, 2}, {6, 2}, {5, 5}, {3, 6}, {0, 4}};
     printsCentroidOfPolygonsWithFiveVertices(polygon2);
-
     return 0;
 }

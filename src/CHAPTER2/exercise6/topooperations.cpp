@@ -27,6 +27,8 @@ GeoPoint midPoint(GeoPoint a, GeoPoint b) {
 void testGetDirection() {
     GeoPoint start, end;
 
+    std::cout << "GET DIRECTION TESTS.\n";
+
     // Test case 1: NORTH
     start = {0.0, 0.0};
     end = {0.0, 1.0};
@@ -112,11 +114,13 @@ void testGetDirection() {
 void testMidPoint() {
     GeoPoint a, b, expected, result;
 
+    std::cout << "\nMID POINT TESTS.\n";
+
     // Test case 1
     a = {0.0, 0.0};
     b = {2.0, 2.0};
     expected = {1.0, 1.0};
-    result = midPoint(a, b);n
+    result = midPoint(a, b);
     if (result.x == expected.x && result.y == expected.y) {
         std::cout << "Test case 1 passed.\n";
     } else {

@@ -29,14 +29,14 @@ int main () {
     Line line4 = {2, 4, 10};
     if (areTheLinesParallel(line3, line4)) {
         cout << "The lines are parallel" << endl;
-    } else {
-        cout << printsTheIntersectionOfTwoRectLines(line3, line4) << endl;
+        return 0;
     }
+    cout << printsTheIntersectionOfTwoRectLines(line3, line4) << endl;
     return 0;
 }
 
 bool areTheLinesParallel(Line &line1, Line &line2) {
-    return line1.a == line2.a;
+    return line1.b / line1.a == line2.b / line2.a;
 };
 
 string printsTheIntersectionOfTwoRectLines(Line &line1, Line &line2) {

@@ -3,7 +3,10 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/stanford-cpp-library",
+                "${workspaceFolder}/stanford-cpp-library/Archived/autograder-empty-project/lib/StanfordCPPLib/io",
+                "${workspaceFolder}/stanford-cpp-library/Archived/autograder-empty-project/lib/StanfordCPPLib"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

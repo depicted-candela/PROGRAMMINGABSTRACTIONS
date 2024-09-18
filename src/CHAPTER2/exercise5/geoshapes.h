@@ -12,8 +12,8 @@ struct GeoPoint {
     double latitude;
 };
 
-double calculateArea(ShapeType);
-double calculateDistance(GeoPoint a, GeoPoint b);
-double calculateCircleArea();
+double calculatesArea(ShapeType);
+double calculatesDistance(GeoPoint a, GeoPoint b);
+double calculatesCircleArea();
 
 #endif
