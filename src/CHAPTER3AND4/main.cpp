@@ -6,11 +6,13 @@
 
 #include "console.h"
 #include "exercise1.h"
+#include "exercise2.h"
 using namespace std;
 
 
 int main()
 {
-    getUpperCasedString();
+    // getUpperCasedString();
+    testsExtractionOfCitiesStartingWithVowel();
     return 0;
 }
