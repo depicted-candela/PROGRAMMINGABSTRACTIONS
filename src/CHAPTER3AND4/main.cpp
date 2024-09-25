@@ -15,6 +15,6 @@ int main()
 {
     // getUpperCasedString();
     // testsExtractionOfCitiesStartingWithVowel();
-
+    splitsCsvIntoThreeColumns()
     return 0;
 }
