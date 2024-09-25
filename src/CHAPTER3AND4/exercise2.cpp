@@ -5,26 +5,29 @@
 #include <simpio.h>
 using namespace std;
 
-void extractsCitiesStartingWithVowel(ifstream & input) {
-    while(true){
-        string line;
-        getline(input, line);
-        if(input.fail()) break;
-        line = toLowerCase(line);
-        bool isA = startsWith(line, "a");
-        bool isE = startsWith(line, "e");
-        bool isI = startsWith(line, "i");
-        bool isO = startsWith(line, "o");
-        bool isU = startsWith(line, "u");
-        if (isA || isE || isI || isO || isU) {
-            cout << line << endl;
-        }
+void extractsCitiesStartingWithVowel(string input, string output) {
+    ifstream infile;
+    ofstream outfile;
+    infile.open(input);
+    outfile.open(output);
+    while(true) {
+        string line, lowerCasedLine;
+        getline(infile, line);
+        if(infile.fail()) break;
+        lowerCasedLine = toLowerCase(line);
+        bool isA = startsWith(lowerCasedLine, "a");
+        bool isE = startsWith(lowerCasedLine, "e");
+        bool isI = startsWith(lowerCasedLine, "i");
+        bool isO = startsWith(lowerCasedLine, "o");
+        bool isU = startsWith(lowerCasedLine, "u");
+        if (isA || isE || isI || isO || isU) outfile << line + '\n';
     }
+    infile.close();
+    outfile.close();
 }
 
 void testsExtractionOfCitiesStartingWithVowel() {
-    ifstream infile;
-    string fileName = promptUserForFilename("Give a file", "Give a valid file");
-    infile.open(fileName);
-    extractsCitiesStartingWithVowel(infile);
+    string inFileName = promptUserForFilename("Give a file", "Give a valid file");
+    string outFileName = promptUserForFilename("Give a file", "Give a valid file");
+    extractsCitiesStartingWithVowel(inFileName, outFileName);
 }
