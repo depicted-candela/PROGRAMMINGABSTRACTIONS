@@ -5,14 +5,16 @@
  */
 
 #include "console.h"
-#include "exercise1.h"
-#include "exercise2.h"
+// #include "exercise1.h"
+// #include "exercise2.h"
+#include "exercise3.h"
 using namespace std;
 
 
 int main()
 {
     // getUpperCasedString();
-    testsExtractionOfCitiesStartingWithVowel();
+    // testsExtractionOfCitiesStartingWithVowel();
+
     return 0;
 }

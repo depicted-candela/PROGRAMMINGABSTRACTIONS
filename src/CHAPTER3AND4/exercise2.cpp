@@ -1,4 +1,3 @@
-#include <iostream>
 #include <fstream>
 #include <string>
 #include <strlib.h>
@@ -10,8 +9,8 @@ void extractsCitiesStartingWithVowel(string input, string output) {
     ofstream outfile;
     infile.open(input);
     outfile.open(output);
+    string line, lowerCasedLine;
     while(true) {
-        string line, lowerCasedLine;
         getline(infile, line);
         if(infile.fail()) break;
         lowerCasedLine = toLowerCase(line);

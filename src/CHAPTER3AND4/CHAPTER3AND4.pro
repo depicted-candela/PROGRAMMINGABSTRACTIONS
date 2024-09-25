@@ -74,10 +74,12 @@ DEFINES     +=  main=qMain qMain=studentMain
 # entries, so no worries about duplicates
 SOURCES         *=  "" \
     exercise1.cpp \
-    exercise2.cpp
+    exercise2.cpp \
+    exercise3.cpp
 HEADERS         *=  "" \
     exercise1.h \
-    exercise2.h
+    exercise2.h \
+    exercise3.h
 
 # Gather any .cpp or .h files within the project folder (student/starter code).
 # Second argument true makes search recursive
