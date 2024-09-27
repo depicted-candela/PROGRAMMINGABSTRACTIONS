@@ -2,10 +2,10 @@
 #include <string>
 #include <strlib.h>
 #include <simpio.h>
-#include "exercise3.h"
+#include "exercise1_3.h"
 using namespace std;
 
-void splitsCsvIntoThreeColumns (string pathInput, string pathLatitudes, string pathLongitudes, string pathPlaces) {
+void splitsCsvIntoThreeColumns(string pathInput, string pathLatitudes, string pathLongitudes, string pathPlaces) {
     ifstream input;
     ofstream latitudes;
     ofstream longitudes;
@@ -25,17 +25,23 @@ void splitsCsvIntoThreeColumns (string pathInput, string pathLatitudes, string p
             if (line.at(i) == ',') {
                 subLine = line.substr(latestIndex, i - latestIndex);
                 switch(column) {
-                case 0: latitudes << subLine;
-                case 1: longitudes << subLine;
+                    case 0:
+                        latitudes << subLine + "\n";
+                        break;
+                    case 1: longitudes << subLine + "\n";
+                        break;
                 }
                 column++;
             }
         }
         places << line.substr(latestIndex, line.length() - 1);
     }
+    latitudes.close();
+    longitudes.close();
+    places.close();
 }
 
-void testsExtractionOfCitiesStartingWithVowel() {
+void testsExtractionOfThreeColumnsFromCSV() {
     string pathInput = promptUserForFilename("Give a csv file with three variables", "Give a valid file");
     string pathLatitudes = promptUserForFilename("Give a csv file for latitudes", "Give a valid file");
     string pathLongitudes = promptUserForFilename("Give a csv file for longitudes", "Give a valid file");

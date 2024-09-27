@@ -7,7 +7,8 @@
 #include "console.h"
 // #include "exercise1.h"
 // #include "exercise2.h"
-#include "exercise3.h"
+// #include "exercise1_3.h"
+#include "exercise1_4.h"
 using namespace std;
 
 
@@ -15,6 +16,7 @@ int main()
 {
     // getUpperCasedString();
     // testsExtractionOfCitiesStartingWithVowel();
-    splitsCsvIntoThreeColumns()
+    // testsExtractionOfThreeColumnsFromCSV();
+    countsWordFrequency();
     return 0;
 }

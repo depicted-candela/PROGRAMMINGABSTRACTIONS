@@ -1,5 +1,5 @@
-#ifndef EXERCISE2_H
-#define EXERCISE2_H
+#ifndef EXERCISE1_2_H
+#define EXERCISE1_2_H
 
 void testsExtractionOfCitiesStartingWithVowel();
 
