@@ -3,4 +3,4 @@
 
 void countsWordFrequency();
 
-#endif // EXERCISE1_4_H
+#endif

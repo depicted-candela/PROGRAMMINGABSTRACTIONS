@@ -1,16 +1,21 @@
 #include <hashmap.h>
 #include <fstream>
 #include <simpio.h>
+#include <cctype>
 using namespace std;
 
 void extractsParagraph(string &line) {
     int startingIndex, lineLength;
+    istringstream stream(line);
     startingIndex = 0;
     lineLength = line.length();
     for (int i = 0; i < lineLength; i++) {
-        if (line.at(i) == '\"') startingIndex = i + 1;
+        if (line.at(i) == '\"') {
+            startingIndex = i;
+            break;
+        }
     }
-    line = line.substr(startingIndex, lineLength - 2);
+    line = line.substr(startingIndex + 1, lineLength - 2 - startingIndex);
 }
 
 void savesWordInMap(HashMap<string, int> &countedWords, string word) {
@@ -23,18 +28,24 @@ void savesWordInMap(HashMap<string, int> &countedWords, string word) {
 
 void countsWordFrequencyInLine(HashMap<string, int> &countedWords, string &line) {
     int latestIndex, lineLength;
+    char character;
     string word;
     latestIndex = 0;
-    extractsParagraph(line);
     lineLength = line.length();
-    for (int i = 0; i < lineLength; i++) {
-        if (line.at(i) == ' ') {
-            word = line.substr(latestIndex - 1, i);
+    for (int i = 0; i < lineLength - 1; i++) {
+        character = line.at(i);
+        if (character == ' ' || character == ',' || character == '.') {
+            bool isEmptyChar = line.substr(latestIndex, i - latestIndex).length() == 0;
+            if (isEmptyChar) {
+                latestIndex = i + 1;
+                continue;
+            }
+            word = line.substr(latestIndex, i - latestIndex);
             savesWordInMap(countedWords, word);
-            latestIndex = i;
+            latestIndex = i + 1;
         }
     }
-    word = line.substr(latestIndex + 1, lineLength - 1);
+    word = line.substr(latestIndex + 1, lineLength - 2);
     savesWordInMap(countedWords, word);
 }
 
@@ -62,19 +73,26 @@ string readsFile() {
 }
 
 void countsWordFrequency() {
+    HashMap<string, int> countedWords;
+    string line, filePath;
     Vector<string> keys;
     Vector<int> values;
-    string filePath = readsFile();
-    HashMap<string, int> countedWords;
-    fstream file;
-    file.open(filePath);
-    string line;
-    while (getline(file, line)) {
+    ifstream infile;
+
+    filePath = readsFile();
+    infile.open(filePath);
+
+    while (true) {
+        getline(infile, line);
+        if (infile.fail()) break;
         extractsParagraph(line);
         countsWordFrequencyInLine(countedWords, line);
     }
+
+    infile.close();
     createsSortedArrayWithWordFrequencies(countedWords, keys, values);
     for (int i = 0; i < keys.size(); i++) cout << keys[i] << ": " << values[i] << endl;
+
 }
 
 

@@ -3,4 +3,4 @@
 
 void getUpperCasedString();
 
-#endif // EXERCISE1_1_H
+#endif
