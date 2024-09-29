@@ -8,7 +8,8 @@
 // #include "exercise1.h"
 // #include "exercise2.h"
 // #include "exercise1_3.h"
-#include "exercise1_4.h"
+// #include "exercise1_4.h"
+#include "exercise1_5.h"
 using namespace std;
 
 
@@ -17,6 +18,7 @@ int main()
     // getUpperCasedString();
     // testsExtractionOfCitiesStartingWithVowel();
     // testsExtractionOfThreeColumnsFromCSV();
-    countsWordFrequency();
+    // countsWordFrequency();
+    showsTextAs2DCoords();
     return 0;
 }
