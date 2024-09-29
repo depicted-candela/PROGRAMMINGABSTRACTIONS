@@ -48,7 +48,7 @@ void printsFormattedCoords(string longitude, string latitude) {
 void showsTextAs2DCoords() {
     ifstream input;
     string line, subLine, longitude, latitude, pathFile;
-    pathFile = promptUserForFilename("Give the path of a .txt file: ");
+    pathFile = promptUserForFilename("Give the path of a .txt file: ", "Give a valid path: ");
     input.open(pathFile);
     cout << "  longitude |    latitude" << endl;
     cout << "  -----------------------" << endl;

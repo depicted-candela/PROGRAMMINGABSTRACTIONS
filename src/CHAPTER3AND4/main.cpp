@@ -9,7 +9,8 @@
 // #include "exercise2.h"
 // #include "exercise1_3.h"
 // #include "exercise1_4.h"
-#include "exercise1_5.h"
+// #include "exercise1_5.h"
+#include "exercise1_6.h"
 using namespace std;
 
 
@@ -19,6 +20,7 @@ int main()
     // testsExtractionOfCitiesStartingWithVowel();
     // testsExtractionOfThreeColumnsFromCSV();
     // countsWordFrequency();
-    showsTextAs2DCoords();
+    // showsTextAs2DCoords();
+    cliForGISOperations();
     return 0;
 }
